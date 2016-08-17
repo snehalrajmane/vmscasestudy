@@ -21,7 +21,7 @@
 	</target>
 	
 	<target name='compile' depends='clean'>
-		<javac srcdir='${src.dir}' destdir='${classes.dir}'></javac>
+		<javac srcdir='${src.dir}' destdir='${classes.dir}' includeantruntime="false" classpath='${lib.dir}/junit-4.12.jar'></javac>
 	</target>
 
 	<target name='war' depends='compile'>
@@ -35,10 +35,10 @@
 
 	<target name="test" depends="compile">
 	<mkdir dir="target/test-classes"/>
-        <javac srcdir='${test.dir}' destdir="target/test-classes">
+        <javac srcdir='${test.dir}' includeantruntime="false" destdir="target/test-classes">
             <classpath>
                 <pathelement location="build/classes"/>
-                <pathelement location="lib/ant-junit4.jar"/>
+                <pathelement location='${lib.dir}/junit-4.12.jar'/>
             </classpath>
         </javac>
 
@@ -46,7 +46,7 @@
         <junit haltonfailure="no" printsummary="on">
             <classpath >
                 <pathelement location="build/classes"/>
-                <pathelement location="lib/ant-junit4.jar"/>
+                <pathelement location="lib/junit-4.12.jar"/>
                 <pathelement location="target/test-classes"/>
             </classpath>
             <formatter type="brief" usefile="false"/>
