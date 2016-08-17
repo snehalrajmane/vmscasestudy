@@ -34,7 +34,8 @@
 	<target name='build' depends='war' description='compile and create the war' />
 
 	<target name="test" depends="compile">
-        <javac srcdir="test.dir" destdir="target/test-classes">
+	<mkdir dir="target/test-classes"/>
+        <javac srcdir='${test.dir}' destdir="target/test-classes">
             <classpath>
                 <pathelement location="build/classes"/>
                 <pathelement location="lib/ant-junit4.jar"/>
