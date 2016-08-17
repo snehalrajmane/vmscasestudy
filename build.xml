@@ -11,6 +11,7 @@
 		<property name='src.dir' location='src'/>
 		<property name='lib.dir' location='lib'/>
 		<property name='target1.dir' location='target'/>
+		<property name='app.dir' location='build'/>
 		<property name='classes.dir' location='build/classes'/>
 		<property name='web.dir' location='WebContent'/>
 		<property name='test.dir' location='test'/>
@@ -25,7 +26,7 @@
 	</target>
 
 	<target name='war' depends='compile'>
-		<war destFile='build/${app.name}.war' webxml='${web.dir}/WEB-INF/web.xml'>
+		<war destFile='${app.dir}/${app.name}.war' webxml='${web.dir}/WEB-INF/web.xml'>
 		  <classes dir='${classes.dir}'/>
 		  <fileset dir='${web.dir}' excludes='WEB-INF/web.xml' />
 		</war>
