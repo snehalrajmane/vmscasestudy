@@ -7,11 +7,12 @@
 <project name="Vulnerability Management System" default="all">
   <target name="all" depends="init, clean, compile, war, test, build"/>
 	<target name='init'>
+		<mkdir dir="app"/>
 		<property name='app.name' value='CaseStudyVulnerability'/>
 		<property name='src.dir' location='src'/>
 		<property name='lib.dir' location='lib'/>
 		<property name='target1.dir' location='target'/>
-		<property name='app.dir' location='build'/>
+		<property name='app.dir' location='app'/>
 		<property name='classes.dir' location='build/classes'/>
 		<property name='web.dir' location='WebContent'/>
 		<property name='test.dir' location='test'/>
