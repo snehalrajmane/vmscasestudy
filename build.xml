@@ -13,6 +13,7 @@
 		<property name='target1.dir' location='target'/>
 		<property name='classes.dir' location='build/classes'/>
 		<property name='web.dir' location='WebContent'/>
+		<property name='test.dir' location='test'/>
 	</target>
 
 	<target name='clean' depends='init' description='Use for a clean build'>
@@ -33,7 +34,7 @@
 	<target name='build' depends='war' description='compile and create the war' />
 
 	<target name="test" depends="compile">
-        <javac srcdir="test" destdir="target/test-classes">
+        <javac srcdir="test.dir" destdir="target/test-classes">
             <classpath>
                 <pathelement location="build/classes"/>
                 <pathelement location="lib/ant-junit4.jar"/>
