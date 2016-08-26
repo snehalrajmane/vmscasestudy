@@ -12,7 +12,7 @@ public class Database
                 private Database() throws InstantiationException, IllegalAccessException,ClassNotFoundException, SQLException
                 {
                                 this.conn = null;
-                                String url = "jdbc:mysql://10.51.237.129:8026/";
+                                String url = "jdbc:mysql://10.51.237.129:3249/";
                                 String dbName = "voltage";
                                 String driver = "com.mysql.jdbc.Driver";
                                 String userName = "root";
